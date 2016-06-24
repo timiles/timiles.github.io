@@ -1,0 +1,140 @@
+﻿@using SiteGenerator.Models
+@inherits RazorEngine.Templating.TemplateBase<IndexModel>
+@{
+    Layout = "Templates._Layout";
+}
+
+@section Head{
+    <title>@(Model.FullName) - @(Model.Tagline)</title>
+    <meta name="Description" content="@(Model.FullName): @(Model.Tagline)" />
+    <meta property="og:site_name" content="@(Model.FullName)" />
+    <meta property="og:title" content="@(Model.FullName) : Personal Homepage" />
+    <meta property="og:url" content="@(Model.Domain)" />
+    <meta property="og:description" content="@(Model.Tagline)" />
+    @if (Model.ProfileImageSrc != null)
+    {
+        <meta property="og:image" content="@(Model.Domain)@(Model.ProfileImageSrc)" />
+    }
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="@(Model.FirstName)" />
+    <meta property="profile:last_name" content="@(Model.LastName)" />
+}
+
+<div class="jumbotron static-jumbotron navbar-fixed-top collapse" id="mainHeaderSmall">
+    <div class="container">
+        <p>
+            @if (Model.ProfileImageSrc != null)
+            {
+                <img src="@(Model.ProfileImageSrc)" width="40" height="40" class="profile-image" />
+            }
+            @(Model.FullName)
+            <small>@(Model.Tagline)</small>
+        </p>
+    </div>
+</div>
+<div class="jumbotron" id="mainHeaderLarge">
+    <div class="container">
+        <div class="col-sm-6">
+            <h1>@Model.FullName</h1>
+            @*<p class="company-name">@Model.CompanyName</p>*@
+            <p class="lead">@Model.Tagline</p>
+            @if (Model.DateNextAvailableForWork != null)
+            {
+                <p>Next available for work: @(Model.DateNextAvailableForWork.Value.ToString("MMMM d"))</p>
+            }
+        </div>
+        @if (Model.ProfileImageSrc != null)
+        {
+            <div class="col-sm-6">
+                <div class="profile-image-container">
+                    <img src="@(Model.ProfileImageSrc)" alt="Professional photo of @(Model.FullName)" class="profile-image" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="container body-content">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h2>About me</h2>
+                @Model.Blurb
+            </div>
+
+            @if (Model.CurrentStatus != null)
+            {
+                <div>
+                    <h2>Current status</h2>
+                    <p>@(Model.CurrentStatus)</p>
+                </div>
+            }
+
+            <div>
+                <h2>
+                    External links <small><i class="glyphicon glyphicon-link"></i></small>
+                </h2>
+                <ul class="list-external-links">
+                    @if (Model.LinkedInUrl != null)
+                    {
+                        <li>
+                            <i class="sprite sprite-linkedin"></i>
+                            <a href="@(Model.LinkedInUrl)" target="_blank">
+                                Connect with me on LinkedIn
+                            </a>
+                        </li>
+                    }
+                    @if (Model.StackOverflowUsername != null)
+                    {
+                        <li>
+                            <i class="sprite sprite-stackoverflow"></i>
+                            <a href="http://stackoverflow.com/users/@(Model.StackOverflowUserId)/tim-iles" target="_blank">
+                                I'm active on StackOverflow
+                                @*<img src="http://stackoverflow.com/users/flair/@(Model.StackOverflowUserId).png?theme=clean" width="208" height="58" alt="profile for @(Model.FullName) at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for @(Model.FullName) at Stack Overflow, Q&amp;A for professional and enthusiast programmers">*@
+                            </a>
+                        </li>
+                    }
+                    @if (Model.GitHubUsername != null)
+                    {
+                        <li>
+                            <i class="sprite sprite-github"></i>
+                            <a href="https://github.com/@(Model.GitHubUsername)" target="_blank">
+                                View my projects on GitHub
+                            </a>
+                        </li>
+                    }
+                    @if (Model.TwitterUsername != null)
+                    {
+                        <li>
+                            <i class="sprite sprite-twitter"></i>
+                            <a href="https://twitter.com/@(Model.TwitterUsername)" target="_blank">
+                                Follow me on Twitter
+                            </a>
+
+                            @*<h2>Twitter</h2>
+                                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/@(Model.TwitterUsername)" data-widget-id="@(Model.TwitterWidgetId)">Tweets by @@@(Model.TwitterUsername)</a>*@
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h2>Location</h2>
+            <div id="map" data-lat="@(Model.Map.Latitude)" data-lng="@(Model.Map.Longitude)" data-zoom="@(Model.Map.Zoom)" data-radius="@(Model.Map.Radius)"></div>
+        </div>
+    </div>
+
+    <hr />
+    <footer>
+        <p>
+            &copy; @System.DateTime.Now.Year - @(Model.CompanyName ?? Model.Domain)
+        </p>
+    </footer>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="/js/home.js"></script>
+}

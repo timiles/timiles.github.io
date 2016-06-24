@@ -28,7 +28,7 @@ namespace SiteGenerator
             };
 
             model.Blurb = $"<p>Over {model.TotalYearsExperience} years’ commercial experience in <span class='skill'>C#</span>, <span class='skill'>ASP.NET</span>, <span class='skill'>JavaScript</span>, <span class='skill'>SQL Server</span> and more.</p>" +
-                       "<p>Passionate about the CI/CD pipeline, and keen on microservices architecture.  Particular experience turning legacy monolith codebases into scalable, testable, manageable code.</p>"
+                       "<p>Passionate about CI/CD automation; keen on microservices architecture.  Particular experience turning legacy monolith codebases into scalable, testable, manageable code.</p>"
                 ;
 
             return model;

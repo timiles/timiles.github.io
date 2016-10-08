@@ -9,6 +9,7 @@ namespace SiteGenerator
             var model = new IndexModel
             {
                 Domain = "http://www.timiles.com",
+                CompanyName = "timiles.com",
                 FirstName = "Tim",
                 LastName = "Iles",
                 Tagline = "Software engineer and full stack web developer, specialising in .NET and associated technologies.",

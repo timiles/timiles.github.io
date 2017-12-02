@@ -8,8 +8,8 @@ namespace SiteGenerator
         {
             var model = new IndexModel
             {
-                Domain = "http://www.timiles.com",
-                CompanyName = "timiles.com",
+                Domain = "https://timiles.github.io",
+                CompanyName = "Tim Iles",
                 FirstName = "Tim",
                 LastName = "Iles",
                 Tagline = "Software engineer and full stack web developer, specialising in .NET and associated technologies.",

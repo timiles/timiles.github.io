@@ -1,4 +1,4 @@
-﻿$(function () {
+﻿function initMap() {
     // gmaps:
     var $map = $('#map');
     var mapCenter = new google.maps.LatLng($map.data('lat'), $map.data('lng'));
@@ -17,8 +17,9 @@
         fillColor: '#DAF4F0',
         strokeOpacity: 0.1
     });
+}
 
-
+$(function () {
     // main header: slide small header down when scrolling past large header
     $(window).scroll(function () {
         if ($(this).scrollTop() > $('#mainHeaderLarge').height()) {

@@ -89,6 +89,11 @@ ul.list-external-links {
    padding-left: 0;
 }
 
+ul.list-external-links a {
+    padding-left: 5px;
+    line-height: 30px;
+}
+
 
 /* skill tags */
 .skill {

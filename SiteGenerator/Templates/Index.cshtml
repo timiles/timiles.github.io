@@ -78,8 +78,8 @@
                 <ul class="list-external-links">
                     @if (Model.LinkedInUrl != null)
                     {
-                        <li>
-                            <i class="sprite sprite-linkedin"></i>
+                        <li class="clearfix">
+                            <i class="pull-left sprite sprite-linkedin"></i>
                             <a href="@(Model.LinkedInUrl)" target="_blank">
                                 Connect with me on LinkedIn
                             </a>
@@ -87,8 +87,8 @@
                     }
                     @if (Model.StackOverflowUsername != null)
                     {
-                        <li>
-                            <i class="sprite sprite-stackoverflow"></i>
+                        <li class="clearfix">
+                            <i class="pull-left sprite sprite-stackoverflow"></i>
                             <a href="http://stackoverflow.com/users/@(Model.StackOverflowUserId)/tim-iles" target="_blank">
                                 I'm active on StackOverflow
                                 @*<img src="http://stackoverflow.com/users/flair/@(Model.StackOverflowUserId).png?theme=clean" width="208" height="58" alt="profile for @(Model.FullName) at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for @(Model.FullName) at Stack Overflow, Q&amp;A for professional and enthusiast programmers">*@
@@ -97,8 +97,8 @@
                     }
                     @if (Model.GitHubUsername != null)
                     {
-                        <li>
-                            <i class="sprite sprite-github"></i>
+                        <li class="clearfix">
+                            <i class="pull-left sprite sprite-github"></i>
                             <a href="https://github.com/@(Model.GitHubUsername)" target="_blank">
                                 View my projects on GitHub
                             </a>
@@ -106,8 +106,8 @@
                     }
                     @if (Model.TwitterUsername != null)
                     {
-                        <li>
-                            <i class="sprite sprite-twitter"></i>
+                        <li class="clearfix">
+                            <i class="pull-left sprite sprite-twitter"></i>
                             <a href="https://twitter.com/@(Model.TwitterUsername)" target="_blank">
                                 Follow me on Twitter
                             </a>

@@ -9,26 +9,51 @@ namespace SiteGenerator
             var model = new IndexModel
             {
                 Domain = "https://timiles.github.io",
-                CompanyName = "Tim Iles",
+                CompanyName = "Telamon Software Ltd",
+                CompanyNumber = "07522796",
                 FirstName = "Tim",
                 LastName = "Iles",
-                Tagline = "Software engineer and full stack web developer, specialising in .NET and associated technologies.",
-                //ProfileImageSrc = "/img/profile.jpg",
-                //ProfileImageWidth = 350,
-                //ProfileImageHeight = 350,
-                //DateNextAvailableForWork = new DateTime(2017, 1, 1),
+                Tagline = "Web and app developer based in London, UK.",
+                Intro = "Hi! I'm Tim and I love writing software.",
+                ProfileImageSrc = "/img/profile.jpg",
 
+                EmailAddress = "dev@timiles.com",
                 LinkedInUrl = "https://uk.linkedin.com/in/timiles",
-                //StackOverflowUserId = 487544,
-                //StackOverflowUsername = "tim-iles",
                 TwitterUsername = "tim_iles",
-                TwitterWidgetId = 599922965321490432,
                 GitHubUsername = "timiles",
+
+                FrontEndTechnologies = new[]
+                {
+                    new ToolModel("React with Redux", "/img/logos/React-icon.svg"),
+                    new ToolModel("React Native for iOS and Android apps", "/img/logos/ios-android.jpg"),
+                    new ToolModel("Angular", "/img/logos/angular.png"),
+                },
+                BackEndTechnologies = new[]
+                {
+                    new ToolModel("C#, .NET Core, ASP.NET, WebAPI, MVC", "/img/logos/csharp-icon.svg"),
+                    new ToolModel("RESTful API design", "/img/logos/rest.png"),
+                    new ToolModel("Microsoft SQL Server, Entity Framework", "/img/logos/sql.png"),
+                },
+                Architectures = new[]
+                {
+                    new ToolModel("Microservices architecture", "/img/logos/microservices.png"),
+                    new ToolModel("Amazon Web Services (AWS)", "/img/logos/Amazon_Web_Services_Logo.svg"),
+                    new ToolModel("Microsoft Azure", "/img/logos/Microsoft_Azure_Logo.svg"),
+                },
+                DevelopmentPractices = new[]
+                {
+                    new ToolModel("Continuous integration and delivery", "/img/logos/cicd.png"),
+                    new ToolModel("Test-driven development", "/img/logos/tdd.png"),
+                    new ToolModel("Scrum, Agile", "/img/logos/scrum.png"),
+                },
             };
 
-            model.Blurb = $"<p>Over {model.TotalYearsExperience} years’ commercial experience in <span class='skill'>C#</span>, <span class='skill'>ASP.NET</span>, <span class='skill'>JavaScript</span>, <span class='skill'>SQL Server</span> and more.</p>" +
-                       "<p>Passionate about domain-driven design, CI/CD automation, and using the right tool for the job.  Particular experience turning legacy monolith codebases into scalable, testable, manageable code.</p>"
-                ;
+            model.HowCanIHelpYou = new[] {
+                "I specialise in <b>rapid prototyping</b> and building systems from scratch, while also having proven experience with <b>large complex systems</b>, including microservice architectures.",
+                "I deliver <b>quality code in fast iterations</b>. An agile approach can improve efficiency of development time, while giving you regular visibility of progress. A thorough suite of automated tests helps to guarantee that the code not only works, but is clear and maintainable, which your team will be confident to extend further as you require.",
+                $"I have over {model.TotalYearsExperience} years’ commercial experience, including as <b>team lead</b> and <b>providing mentorship</b> as needed.",
+                "I'm a fast learner, and I’m very quick to pick up the specifics of your existing systems, so I can usually start to make <b>valuable contributions from day 1</b> of working with your team.",
+            };
 
             return model;
         }

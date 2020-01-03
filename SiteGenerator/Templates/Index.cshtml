@@ -5,8 +5,8 @@
 }
 
 @section Head{
-    <title>@(Model.FullName) - @(Model.Tagline)</title>
-    <meta name="Description" content="@(Model.FullName): @(Model.Tagline)" />
+    <title>@(Model.FullName): @(Model.Tagline)</title>
+    <meta name="description" content="@(Model.FullName): @(Model.Tagline)" />
     <meta property="og:site_name" content="@(Model.FullName)" />
     <meta property="og:title" content="@(Model.FullName) : Personal Homepage" />
     <meta property="og:url" content="@(Model.Domain)" />
@@ -21,114 +21,158 @@
     <meta property="profile:last_name" content="@(Model.LastName)" />
 }
 
-<div class="jumbotron static-jumbotron navbar-fixed-top collapse" id="mainHeaderSmall">
+<div class="jumbotron">
     <div class="container">
-        <p>
-            @if (Model.ProfileImageSrc != null)
-            {
-                <img src="@(Model.ProfileImageSrc)" width="40" height="40" class="profile-image" />
-            }
-            @(Model.FullName)
-            <small>@(Model.Tagline)</small>
-        </p>
-    </div>
-</div>
-<div class="jumbotron" id="mainHeaderLarge">
-    <div class="container">
-        <div class="col-sm-6">
-            <h1>@Model.FullName</h1>
-            @*<p class="company-name">@Model.CompanyName</p>*@
-            <p class="lead">@Model.Tagline</p>
-            @if (Model.DateNextAvailableForWork != null)
-            {
-                <p>Next available for work: @(Model.DateNextAvailableForWork.Value.ToString("MMMM d"))</p>
-            }
-        </div>
-        @if (Model.ProfileImageSrc != null)
-        {
-            <div class="col-sm-6">
-                <div class="profile-image-container">
-                    <img src="@(Model.ProfileImageSrc)" alt="Professional photo of @(Model.FullName)" class="profile-image" />
-                </div>
+        <div class="row d-flex align-items-center">
+            <div class="col-12 col-sm-6">
+                <h1>@(Model.FullName)</h1>
+                <p class="lead">
+                    @(Model.Tagline)
+                </p>
             </div>
-        }
-    </div>
-</div>
-<div class="container body-content">
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div>
-                <h2>About me</h2>
-                @Model.Blurb
+            <div class="col-6 col-sm-3">
+                <img src="@(Model.ProfileImageSrc)" alt="Professional photo of @(Model.FullName)" class="profile-image img-fluid" />
             </div>
-
-            @if (Model.CurrentStatus != null)
-            {
-                <div>
-                    <h2>Current status</h2>
-                    <p>@(Model.CurrentStatus)</p>
-                </div>
-            }
-
-            <div>
-                <h2>
-                    External links @*<small><i class="glyphicon glyphicon-link"></i></small>*@
-                </h2>
-                <ul class="list-external-links">
-                    @if (Model.LinkedInUrl != null)
+            <div class="col-6 col-sm-3">
+                <h4>
+                    Get in touch
+                </h4>
+                <ul class="list-unstyled mb-0">
+                    @if (Model.EmailAddress != null)
                     {
-                        <li class="clearfix">
-                            <i class="pull-left sprite sprite-linkedin"></i>
-                            <a href="@(Model.LinkedInUrl)" target="_blank">
-                                Connect with me on LinkedIn
+                        <li class="d-flex align-items-center mb-1">
+                            <i class="sprite sprite-gmail"></i>
+                            <a href="mailto://@(Model.EmailAddress)?subject=Contract opportunity" target="_blank">
+                                Email me
                             </a>
                         </li>
                     }
-                    @if (Model.StackOverflowUsername != null)
+                    @if (Model.LinkedInUrl != null)
                     {
-                        <li class="clearfix">
-                            <i class="pull-left sprite sprite-stackoverflow"></i>
-                            <a href="http://stackoverflow.com/users/@(Model.StackOverflowUserId)/tim-iles" target="_blank">
-                                I'm active on StackOverflow
-                                @*<img src="http://stackoverflow.com/users/flair/@(Model.StackOverflowUserId).png?theme=clean" width="208" height="58" alt="profile for @(Model.FullName) at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for @(Model.FullName) at Stack Overflow, Q&amp;A for professional and enthusiast programmers">*@
+                        <li class="d-flex align-items-center mb-1">
+                            <i class="sprite sprite-linkedin"></i>
+                            <a href="@(Model.LinkedInUrl)" target="_blank">
+                                <span class="d-none d-xl-inline">Connect with me on </span>LinkedIn
                             </a>
                         </li>
                     }
                     @if (Model.GitHubUsername != null)
                     {
-                        <li class="clearfix">
-                            <i class="pull-left sprite sprite-github"></i>
+                        <li class="d-flex align-items-center mb-1">
+                            <i class="sprite sprite-github"></i>
                             <a href="https://github.com/@(Model.GitHubUsername)" target="_blank">
-                                View my projects on GitHub
+                                <span class="d-none d-xl-inline">View my projects on </span>GitHub
                             </a>
                         </li>
                     }
                     @if (Model.TwitterUsername != null)
                     {
-                        <li class="clearfix">
-                            <i class="pull-left sprite sprite-twitter"></i>
+                        <li class="d-flex align-items-center mb-1">
+                            <i class="sprite sprite-twitter"></i>
                             <a href="https://twitter.com/@(Model.TwitterUsername)" target="_blank">
-                                Follow me on Twitter
+                                <span class="d-none d-xl-inline">Follow me on </span>Twitter
                             </a>
-
-                            @*<h2>Twitter</h2>
-                                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/@(Model.TwitterUsername)" data-widget-id="@(Model.TwitterWidgetId)">Tweets by @@@(Model.TwitterUsername)</a>*@
                         </li>
                     }
                 </ul>
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 text-center mb-3">
+            <h2>@(Model.Intro)</h2>
+        </div>
+        <div class="col-12">
+            <h3>How can I help you?</h3>
+            <ul>
+                @foreach (string line in Model.HowCanIHelpYou)
+                {
+                    <li>@(line)</li>
+                }
+            </ul>
+        </div>
+    </div>
 
     <hr />
-    <footer>
-        <p>
-            &copy; @System.DateTime.Now.Year - @(Model.CompanyName ?? Model.Domain)
-        </p>
-    </footer>
-</div>
 
-@section Scripts{
-    <script type="text/javascript" src="/js/home.js"></script>
-}
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>I use a wide variety of tools, but these are my favourites:</h3>
+        </div>
+        <div class="col-sm-6">
+            <h4>Front end</h4>
+            <ul class="list-unstyled">
+                @foreach (ToolModel tool in Model.FrontEndTechnologies)
+                {
+                    <li class="d-flex align-items-center mb-1">
+                        <img class="logo" src="@(tool.ImageSrc)" />
+                        @(tool.Name)
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <h4>Back end</h4>
+            <ul class="list-unstyled">
+                @foreach (ToolModel tool in Model.BackEndTechnologies)
+                {
+                    <li class="d-flex align-items-center mb-1">
+                        <img class="logo" src="@(tool.ImageSrc)" />
+                        @(tool.Name)
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>Architecture, Infrastructure</h4>
+            <ul class="list-unstyled">
+                @foreach (ToolModel tool in Model.Architectures)
+                {
+                    <li class="d-flex align-items-center mb-1">
+                        <img class="logo" src="@(tool.ImageSrc)" />
+                        @(tool.Name)
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <h4>Development practices</h4>
+            <ul class="list-unstyled">
+                @foreach (ToolModel tool in Model.DevelopmentPractices)
+                {
+                    <li class="d-flex align-items-center mb-1">
+                        <img class="logo" src="@(tool.ImageSrc)" />
+                        @(tool.Name)
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row d-flex align-items-center">
+        <div class="col-3 col-sm-2">
+            <img src="/img/chat.svg" />
+        </div>
+        <div class="col-9 col-sm-10">
+            <h3 class="mb-3">Want to discuss your development needs?</h3>
+            <p>
+                Best way to get in touch is to email me at
+                <b><a href="mailto://@(Model.EmailAddress)?subject=Contract opportunity" target="_blank">@(Model.EmailAddress)</a></b>
+                and we can arrange a time to chat.
+            </p>
+        </div>
+    </div>
+</div>
+<hr />
+<footer class="container">
+    <p class="small mb-0">
+        &copy; @System.DateTime.Now.Year - @(Model.FullName). <span class="company-name">@(Model.CompanyName ?? Model.Domain)</span>, company number @(Model.CompanyNumber).
+    </p>
+</footer>

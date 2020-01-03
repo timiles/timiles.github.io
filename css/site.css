@@ -1,35 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-body {
-  font-size: 16px;
-  color: #444;
-  /*background-color: #f9f4ed;*/
-}
-
-.static-jumbotron {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.static-jumbotron p {
-    margin-bottom: 0;
+    color: #444;
 }
 
 .company-name {
     font-variant: small-caps
-}
-
-.modal-footer-text {
-    float: left;
-    line-height: 34px;
 }
 
 /* spritesheet */
@@ -37,6 +13,7 @@ body {
     background-image: url(spritesheet.png);
     background-repeat: no-repeat;
     display: inline-block;
+    margin-right: 5px;
 }
 
 .sprite-github {
@@ -75,30 +52,17 @@ body {
     background-position: -85px -45px;
 }
 
-
-/* list-external-links */
-ul.list-external-links {
-   list-style: none;
-   padding-left: 0;
-}
-
-ul.list-external-links a {
-    padding-left: 5px;
-    line-height: 30px;
-}
-
-
-/* skill tags */
-.skill {
-    font-weight: bolder;
-}
-
-
-
-div.profile-image-container {
-    max-width: 350px;
-}
 img.profile-image {
-    background-color: #ffffff;
-    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+
+.jumbotron {
+    background-color: aliceblue;
+}
+
+.logo {
+    width: 40px;
+    margin: 10px;
 }

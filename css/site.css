@@ -32,13 +32,6 @@ body {
     line-height: 34px;
 }
 
-/* maps */
-@media screen, projection, print {
-    #map {
-        height: 600px;
-    }
-}
-
 /* spritesheet */
 .sprite {
     background-image: url(spritesheet.png);

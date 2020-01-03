@@ -17,8 +17,6 @@ namespace SiteGenerator.Models
         public int ProfileImageHeight { get; set; }
         public string CurrentStatus { get; set; }
 
-        public MapModel Map { get; set; }
-
         // extra info
         public long? StackOverflowUserId { get; set; }
         public string StackOverflowUsername { get; set; }

@@ -24,8 +24,6 @@ namespace SiteGenerator
                 TwitterUsername = "tim_iles",
                 TwitterWidgetId = 599922965321490432,
                 GitHubUsername = "timiles",
-                Map = new MapModel(51.5, -0.1, 11, 7000),
-
             };
 
             model.Blurb = $"<p>Over {model.TotalYearsExperience} years’ commercial experience in <span class='skill'>C#</span>, <span class='skill'>ASP.NET</span>, <span class='skill'>JavaScript</span>, <span class='skill'>SQL Server</span> and more.</p>" +

@@ -119,11 +119,6 @@
                 </ul>
             </div>
         </div>
-
-        <div class="col-sm-6">
-            <h2>Location</h2>
-            <div id="map" data-lat="@(Model.Map.Latitude)" data-lng="@(Model.Map.Longitude)" data-zoom="@(Model.Map.Zoom)" data-radius="@(Model.Map.Radius)"></div>
-        </div>
     </div>
 
     <hr />
@@ -136,6 +131,4 @@
 
 @section Scripts{
     <script type="text/javascript" src="/js/home.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSI4rHkFTmtMfy3LXVZs-W81WK5-NaKEo&callback=initMap"
-            type="text/javascript"></script>
 }

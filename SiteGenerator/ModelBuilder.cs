@@ -21,7 +21,6 @@ namespace SiteGenerator
 
                 EmailAddress = "dev@timiles.com",
                 LinkedInUrl = "https://uk.linkedin.com/in/timiles",
-                TwitterUsername = "tim_iles",
                 GitHubUsername = "timiles",
 
                 FrontEndTechnologies = new[]

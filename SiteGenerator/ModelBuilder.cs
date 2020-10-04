@@ -1,4 +1,5 @@
 ﻿using SiteGenerator.Models;
+using System;
 
 namespace SiteGenerator
 {
@@ -13,6 +14,7 @@ namespace SiteGenerator
                 CompanyNumber = "07522796",
                 FirstName = "Tim",
                 LastName = "Iles",
+                CareerStartDate = new DateTime(2004, 10, 1),
                 Tagline = "Web and app developer based in London, UK.",
                 Intro = "Hi! I'm Tim and I love writing software.",
                 ProfileImageSrc = "/img/profile.jpg",

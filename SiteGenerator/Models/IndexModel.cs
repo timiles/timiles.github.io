@@ -13,6 +13,9 @@ namespace SiteGenerator.Models
         public string Tagline { get; set; }
         public string ProfileImageSrc { get; set; }
 
+        public DateTime CareerStartDate { get; set; }
+        public int TotalYearsExperience => (int)Math.Floor((DateTime.Today - this.CareerStartDate).TotalDays / 365.25);
+
         // Get in touch info
         public string EmailAddress { get; set; }
         public string TwitterUsername { get; set; }
@@ -27,14 +30,5 @@ namespace SiteGenerator.Models
         public ToolModel[] BackEndTechnologies { get; set; }
         public ToolModel[] Architectures { get; set; }
         public ToolModel[] DevelopmentPractices { get; set; }
-
-        public int TotalYearsExperience
-        {
-            get
-            {
-                var earliestDate = new DateTime(2004, 10, 1);
-                return (int)Math.Floor((DateTime.Today - earliestDate).TotalDays / 365.25);
-            }
-        }
     }
 }

@@ -25,9 +25,9 @@ namespace SiteGenerator
 
                 FrontEndTechnologies = new[]
                 {
-                    new ToolModel("React with Redux", "/img/logos/React-icon.svg"),
-                    new ToolModel("React Native for iOS and Android apps", "/img/logos/ios-android.jpg"),
-                    new ToolModel("Angular", "/img/logos/angular.png"),
+                    new ToolModel("React / React Native", "/img/logos/react-2.svg"),
+                    new ToolModel("Redux", "/img/logos/redux.svg"),
+                    new ToolModel("Apollo GraphQL", "/img/logos/apollo-graphql-compact.svg"),
                 },
                 BackEndTechnologies = new[]
                 {

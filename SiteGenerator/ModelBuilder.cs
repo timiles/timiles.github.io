@@ -15,7 +15,7 @@ namespace SiteGenerator
                 FirstName = "Tim",
                 LastName = "Iles",
                 CareerStartDate = new DateTime(2004, 10, 1),
-                Tagline = "Web and app developer based in London, UK.",
+                Tagline = "Web and app developer based in Berkshire, UK.",
                 Intro = "Hi! I'm Tim and I love writing software.",
                 ProfileImageSrc = "/img/profile.jpg",
 

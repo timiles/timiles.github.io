@@ -39,7 +39,7 @@ namespace SiteGenerator
                 {
                     new ToolModel("Microservices architecture", "/img/logos/microservices.png"),
                     new ToolModel("Amazon Web Services (AWS)", "/img/logos/Amazon_Web_Services_Logo.svg"),
-                    new ToolModel("Microsoft Azure", "/img/logos/Microsoft_Azure_Logo.svg"),
+                    new ToolModel("Microsoft Azure", "/img/logos/azure-1.svg"),
                 },
                 DevelopmentPractices = new[]
                 {
